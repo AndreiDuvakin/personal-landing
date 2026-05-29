@@ -5,7 +5,7 @@ const HomePage = () => (
         <section className="pt-32 pb-16 px-4 text-center">
             <img
                 alt="Andrei Duvakin"
-                src="/images/95039238.jpeg"
+                src="/images/FaceFront.png"
                 className="inline-block size-60 rounded-full ring-2 ring-white outline -outline-offset-1 outline-black/5 object-cover shadow-xl"
             />
             <h1 className="text-5xl font-extrabold mb-4 mt-8">
