@@ -25,7 +25,7 @@ const CertificateModal = ({ isOpen, onClose, pdfUrl, title }) => {
                 </div>
                 <div className="p-4 h-[70vh]">
                     <iframe
-                        src={`${pdfUrl}#toolbar=0`}
+                        src={`${pdfUrl}`}
                         title={title}
                         className="w-full h-full rounded border border-gray-200 dark:border-gray-700"
                     />
