@@ -9,7 +9,7 @@ import CertificateModal from "../components/CirtificateModal.jsx";
 import {useState} from "react";
 
 const About = () => {
-    const [selectedCert, setSelectedCert] = useState(null);
+    const [selectedToView, setSelectedView] = useState(null);
 
     return (
         <section id="about" className="py-16 px-4 max-w-5xl mx-auto">
@@ -108,8 +108,8 @@ const About = () => {
                                         key={i}
                                         className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-sm"
                                     >
-                    {item}
-                  </span>
+                                    {item}
+                                    </span>
                                 ))}
                             </div>
                         </div>
@@ -140,7 +140,7 @@ const About = () => {
                     {achievements.map((ach, idx) => (
                         <div
                             key={idx}
-                            onClick={() => ach.certificate && setSelectedCert(ach)}
+                            onClick={() => ach.certificate && setSelectedView(ach)}
                             className={`border-l-4 border-indigo-500 bg-gray-50 dark:bg-gray-800/80 p-4 rounded-r-lg shadow-sm transition-all duration-200 ${
                                 ach.certificate
                                     ? "cursor-pointer hover:shadow-md hover:-translate-y-0.5"
@@ -152,7 +152,10 @@ const About = () => {
                             {ach.certificate && (
                                 <div className="mt-2 text-xs text-indigo-500 flex items-center gap-1">
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#615fff" fillRule="evenodd" d="M4.75 5.5c.427 0 .791.163 1.075.45c-.145-.778-.37-1.415-.64-1.894C4.72 3.236 4.216 3 3.75 3s-.97.237-1.434 1.056C1.835 4.906 1.5 6.25 1.5 8s.335 3.094.816 3.944c.463.82.967 1.056 1.434 1.056s.97-.237 1.434-1.056c.272-.48.496-1.116.64-1.895a1.47 1.47 0 0 1-1.074.451C3.674 10.5 3 9.47 3 8s.674-2.5 1.75-2.5M7.5 8c0 3.822-1.445 6.5-3.75 6.5S0 11.822 0 8s1.445-6.5 3.75-6.5S7.5 4.178 7.5 8m6.825 2.05c-.145.778-.37 1.415-.64 1.894c-.464.82-.968 1.056-1.435 1.056s-.97-.237-1.434-1.056C10.335 11.094 10 9.75 10 8s.335-3.094.816-3.944C11.279 3.236 11.783 3 12.25 3s.97.237 1.434 1.056c.272.48.496 1.116.64 1.895A1.47 1.47 0 0 0 13.25 5.5c-1.076 0-1.75 1.03-1.75 2.5s.674 2.5 1.75 2.5a1.47 1.47 0 0 0 1.075-.45M16 8c0 3.822-1.445 6.5-3.75 6.5S8.5 11.822 8.5 8s1.445-6.5 3.75-6.5S16 4.178 16 8" clipRule="evenodd"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             viewBox="0 0 16 16"><path fill="#615fff" fillRule="evenodd"
+                                                                       d="M4.75 5.5c.427 0 .791.163 1.075.45c-.145-.778-.37-1.415-.64-1.894C4.72 3.236 4.216 3 3.75 3s-.97.237-1.434 1.056C1.835 4.906 1.5 6.25 1.5 8s.335 3.094.816 3.944c.463.82.967 1.056 1.434 1.056s.97-.237 1.434-1.056c.272-.48.496-1.116.64-1.895a1.47 1.47 0 0 1-1.074.451C3.674 10.5 3 9.47 3 8s.674-2.5 1.75-2.5M7.5 8c0 3.822-1.445 6.5-3.75 6.5S0 11.822 0 8s1.445-6.5 3.75-6.5S7.5 4.178 7.5 8m6.825 2.05c-.145.778-.37 1.415-.64 1.894c-.464.82-.968 1.056-1.435 1.056s-.97-.237-1.434-1.056C10.335 11.094 10 9.75 10 8s.335-3.094.816-3.944C11.279 3.236 11.783 3 12.25 3s.97.237 1.434 1.056c.272.48.496 1.116.64 1.895A1.47 1.47 0 0 0 13.25 5.5c-1.076 0-1.75 1.03-1.75 2.5s.674 2.5 1.75 2.5a1.47 1.47 0 0 0 1.075-.45M16 8c0 3.822-1.445 6.5-3.75 6.5S8.5 11.822 8.5 8s1.445-6.5 3.75-6.5S16 4.178 16 8"
+                                                                       clipRule="evenodd"/></svg>
                                     </span> View certificate
                                 </div>
                             )}
@@ -176,18 +179,44 @@ const About = () => {
                     </svg>
                     Additional courses
                 </h3>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2">
                     {additionalEducation.map((course, idx) => (
-                        <li key={idx}>{course}</li>
+                        <li key={idx}>
+                            <div
+                                onClick={() => course.certificate && setSelectedView(course)}
+                                className={`dark:border dark:hover:border-indigo-500 dark:border-gray-100 flex items-start justify-center gap-2 p-2 rounded-lg transition-all ${
+                                    course.certificate
+                                        ? "cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-sm"
+                                        : "cursor-default"
+                                }`}
+                            >
+                                <span className="text-indigo-500 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4" fill="#615fff"/></svg>
+                                </span>
+                                <span className="text-gray-700 dark:text-gray-300 flex-1">
+                                    {course.title}
+                                </span>
+                                {course.certificate && (
+                                    <div className="mt-2 text-xs text-indigo-500 flex items-center gap-1">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             viewBox="0 0 16 16"><path fill="#615fff" fillRule="evenodd"
+                                                                       d="M4.75 5.5c.427 0 .791.163 1.075.45c-.145-.778-.37-1.415-.64-1.894C4.72 3.236 4.216 3 3.75 3s-.97.237-1.434 1.056C1.835 4.906 1.5 6.25 1.5 8s.335 3.094.816 3.944c.463.82.967 1.056 1.434 1.056s.97-.237 1.434-1.056c.272-.48.496-1.116.64-1.895a1.47 1.47 0 0 1-1.074.451C3.674 10.5 3 9.47 3 8s.674-2.5 1.75-2.5M7.5 8c0 3.822-1.445 6.5-3.75 6.5S0 11.822 0 8s1.445-6.5 3.75-6.5S7.5 4.178 7.5 8m6.825 2.05c-.145.778-.37 1.415-.64 1.894c-.464.82-.968 1.056-1.435 1.056s-.97-.237-1.434-1.056C10.335 11.094 10 9.75 10 8s.335-3.094.816-3.944C11.279 3.236 11.783 3 12.25 3s.97.237 1.434 1.056c.272.48.496 1.116.64 1.895A1.47 1.47 0 0 0 13.25 5.5c-1.076 0-1.75 1.03-1.75 2.5s.674 2.5 1.75 2.5a1.47 1.47 0 0 0 1.075-.45M16 8c0 3.822-1.445 6.5-3.75 6.5S8.5 11.822 8.5 8s1.445-6.5 3.75-6.5S16 4.178 16 8"
+                                                                       clipRule="evenodd"/></svg>
+                                    </span> View certificate
+                                    </div>
+                                )}
+                            </div>
+                        </li>
                     ))}
                 </ul>
             </div>
 
             <CertificateModal
-                isOpen={!!selectedCert}
-                onClose={() => setSelectedCert(null)}
-                pdfUrl={selectedCert?.certificate}
-                title={selectedCert?.title}
+                isOpen={!!selectedToView}
+                onClose={() => setSelectedView(null)}
+                pdfUrl={selectedToView?.certificate}
+                title={selectedToView?.title}
             />
         </section>
     );

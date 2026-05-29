@@ -35,8 +35,24 @@ export const achievements = [
 ];
 
 export const additionalEducation = [
-    "Web Development in Django – Yandex Lyceum (2024)",
-    "Data Analysis – Yandex Lyceum (2023)",
-    "Fundamentals of Industrial Programming in Python – Yandex Academy Lyceum (2021–2022)",
-    "Python Programming Fundamentals – Yandex Academy Lyceum (2020–2021)",
+    {
+      title: "WEB Development Intensive - React",
+      certificate: "/certificates/mmk-web-course.pdf"
+    },
+    {
+        title: "Web Development in Django – Yandex Lyceum (2024)",
+        certificate: "/certificates/Джанго 2024.pdf",
+    },
+    {
+        title: "Data Analysis – Yandex Lyceum (2023)",
+        certificate: "/certificates/971_Анализ_данных_230943836.pdf",
+    },
+    {
+        title: "Fundamentals of Industrial Programming in Python – Yandex Academy Lyceum (2021–2022)",
+        certificate: "/certificates/yal-2.pdf",
+    },
+    {
+        title: "Python Programming Fundamentals – Yandex Academy Lyceum (2020–2021)",
+        certificate: "/certificates/yal-1.pdf",
+    },
 ];
