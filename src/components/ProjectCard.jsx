@@ -2,7 +2,7 @@ const ProjectCard = ({project}) => {
     return (
         <div
             key={project.id}
-            className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
+            className="flex flex-col justify-stretch bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
         >
             <img
                 src={project.image}

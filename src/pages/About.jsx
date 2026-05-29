@@ -5,12 +5,16 @@ import {
     achievements,
     additionalEducation,
 } from "../data/aboutData.js";
+import CertificateModal from "../components/CirtificateModal.jsx";
+import {useState} from "react";
 
 const About = () => {
+    const [selectedCert, setSelectedCert] = useState(null);
+
     return (
         <section id="about" className="py-16 px-4 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 dark:text-gray-100 flex flex-row gap-3">About <h2
-                className="text-indigo-500">me</h2></h2>
+            <h2 className="text-3xl font-bold mb-8 dark:text-gray-100 flex flex-row gap-3">About <p
+                className="text-indigo-500">me</p></h2>
 
             <div className="mb-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p className="mb-3">
@@ -125,9 +129,9 @@ const About = () => {
                             d="M22 8.162v.073c0 .86 0 1.291-.207 1.643s-.584.561-1.336.98l-.793.44c.546-1.848.729-3.834.796-5.532l.01-.221l.002-.052c.651.226 1.017.395 1.245.711c.283.393.283.915.283 1.958m-20 0v.073c0 .86 0 1.291.207 1.643s.584.561 1.336.98l.794.44c-.547-1.848-.73-3.834-.797-5.532l-.01-.221l-.001-.052c-.652.226-1.018.395-1.246.711C2 6.597 2 7.12 2 8.162"/>
                         <path
                             fill="#615fff"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M16.377 2.347A26.4 26.4 0 0 0 12 2c-1.783 0-3.253.157-4.377.347c-1.139.192-1.708.288-2.184.874c-.475.586-.45 1.219-.4 2.485c.173 4.348 1.111 9.78 6.211 10.26V19.5H9.82a1 1 0 0 0-.98.804l-.19.946H6a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5h-2.65l-.19-.946a1 1 0 0 0-.98-.804h-1.43v-3.534c5.1-.48 6.039-5.911 6.211-10.26c.05-1.266.076-1.9-.4-2.485c-.476-.586-1.045-.682-2.184-.874m-3.59 3.46a.75.75 0 0 1 .463.693v4a.75.75 0 0 1-1.5 0V8.31l-.22.22a.75.75 0 1 1-1.06-1.06l1.5-1.5a.75.75 0 0 1 .817-.163"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                         />
                     </svg>
                     Achievements
@@ -136,10 +140,22 @@ const About = () => {
                     {achievements.map((ach, idx) => (
                         <div
                             key={idx}
-                            className="border-l-4 border-indigo-500 bg-gray-50 dark:bg-gray-800/80 p-4 rounded-r-lg shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
+                            onClick={() => ach.certificate && setSelectedCert(ach)}
+                            className={`border-l-4 border-indigo-500 bg-gray-50 dark:bg-gray-800/80 p-4 rounded-r-lg shadow-sm transition-all duration-200 ${
+                                ach.certificate
+                                    ? "cursor-pointer hover:shadow-md hover:-translate-y-0.5"
+                                    : "cursor-default"
+                            }`}
                         >
                             <p className="font-medium text-gray-800 dark:text-gray-100">{ach.title}</p>
                             <p className="text-sm text-gray-500 dark:text-gray-400">{ach.category}</p>
+                            {ach.certificate && (
+                                <div className="mt-2 text-xs text-indigo-500 flex items-center gap-1">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#615fff" fillRule="evenodd" d="M4.75 5.5c.427 0 .791.163 1.075.45c-.145-.778-.37-1.415-.64-1.894C4.72 3.236 4.216 3 3.75 3s-.97.237-1.434 1.056C1.835 4.906 1.5 6.25 1.5 8s.335 3.094.816 3.944c.463.82.967 1.056 1.434 1.056s.97-.237 1.434-1.056c.272-.48.496-1.116.64-1.895a1.47 1.47 0 0 1-1.074.451C3.674 10.5 3 9.47 3 8s.674-2.5 1.75-2.5M7.5 8c0 3.822-1.445 6.5-3.75 6.5S0 11.822 0 8s1.445-6.5 3.75-6.5S7.5 4.178 7.5 8m6.825 2.05c-.145.778-.37 1.415-.64 1.894c-.464.82-.968 1.056-1.435 1.056s-.97-.237-1.434-1.056C10.335 11.094 10 9.75 10 8s.335-3.094.816-3.944C11.279 3.236 11.783 3 12.25 3s.97.237 1.434 1.056c.272.48.496 1.116.64 1.895A1.47 1.47 0 0 0 13.25 5.5c-1.076 0-1.75 1.03-1.75 2.5s.674 2.5 1.75 2.5a1.47 1.47 0 0 0 1.075-.45M16 8c0 3.822-1.445 6.5-3.75 6.5S8.5 11.822 8.5 8s1.445-6.5 3.75-6.5S16 4.178 16 8" clipRule="evenodd"/></svg>
+                                    </span> View certificate
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -166,6 +182,13 @@ const About = () => {
                     ))}
                 </ul>
             </div>
+
+            <CertificateModal
+                isOpen={!!selectedCert}
+                onClose={() => setSelectedCert(null)}
+                pdfUrl={selectedCert?.certificate}
+                title={selectedCert?.title}
+            />
         </section>
     );
 };
