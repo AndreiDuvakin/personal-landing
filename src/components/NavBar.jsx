@@ -18,10 +18,10 @@ const NavBar = () => {
                         <a
                             key={link.href}
                             href={link.href}
-                            className={`transition-colors dark:text-gray-100 ${
+                            className={`transition-colors  ${
                                 isActive(link.href)
-                                    ? 'text-indigo-500 font-medium'
-                                    : 'hover:text-indigo-500'
+                                    ? 'text-indigo-500 font-medium '
+                                    : 'hover:text-indigo-500 dark:text-gray-100'
                             }`}
                         >
                             {link.label}
