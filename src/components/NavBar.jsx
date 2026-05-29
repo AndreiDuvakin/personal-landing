@@ -1,8 +1,11 @@
 import navLinks from "../data/navLinks.js";
 import {useState} from "react";
 import {useTheme} from "./ThemeContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 const NavBar = () => {
+    const navigate = useNavigate();
+
     const [mobileOpen, setMobileOpen] = useState(false);
     const { darkMode, toggleTheme } = useTheme();
     const currentPath = window.location.pathname;
@@ -11,7 +14,9 @@ const NavBar = () => {
     return (
         <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
             <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-                <a href="/" className="font-bold text-xl tracking-tight hover:text-indigo-500 dark:text-gray-100 transition-colors">
+                <a
+                    onClick={() => navigate("/")}
+                    className="cursor-pointer font-bold text-xl tracking-tight hover:text-indigo-500 dark:text-gray-100 transition-colors">
                     Andrei Duvakin
                 </a>
 
@@ -19,8 +24,8 @@ const NavBar = () => {
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
-                            href={link.href}
-                            className={`transition-colors  ${
+                            onClick={() => navigate(link.href)}
+                            className={`transition-colors cursor-pointer  ${
                                 isActive(link.href)
                                     ? 'text-indigo-500 font-medium '
                                     : 'hover:text-indigo-500 dark:text-gray-100'
@@ -31,7 +36,7 @@ const NavBar = () => {
                     ))}
                     <button
                         onClick={toggleTheme}
-                        className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        className="cursor-pointer p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                         aria-label="Переключить тему"
                     >
                         {darkMode ? (
