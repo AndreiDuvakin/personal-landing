@@ -9,7 +9,7 @@ const NavBar = () => {
     return (
         <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
             <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-                <a href="/" className="font-bold text-xl tracking-tight hover:text-indigo-500 transition-colors">
+                <a href="/" className="font-bold text-xl tracking-tight hover:text-indigo-500 dark:text-gray-100 transition-colors">
                     Andrei Duvakin
                 </a>
 
@@ -18,7 +18,7 @@ const NavBar = () => {
                         <a
                             key={link.href}
                             href={link.href}
-                            className={`transition-colors ${
+                            className={`transition-colors dark:text-gray-100 ${
                                 isActive(link.href)
                                     ? 'text-indigo-500 font-medium'
                                     : 'hover:text-indigo-500'
@@ -47,7 +47,7 @@ const NavBar = () => {
                         <a
                             key={link.href}
                             href={link.href}
-                            className={`block py-1 transition-colors ${
+                            className={`block dark:text-gray-100 py-1 transition-colors ${
                                 isActive(link.href)
                                     ? 'text-indigo-500 font-medium'
                                     : 'hover:text-indigo-500'

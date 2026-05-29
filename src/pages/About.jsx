@@ -9,7 +9,8 @@ import {
 const About = () => {
     return (
         <section id="about" className="py-16 px-4 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">About me</h2>
+            <h2 className="text-3xl font-bold mb-8 dark:text-gray-100 flex flex-row gap-3">About <h2
+                className="text-indigo-500">me</h2></h2>
 
             <div className="mb-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p className="mb-3">
@@ -28,8 +29,8 @@ const About = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <div className="dark:border dark:border-gray-300 bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                    <h3 className="dark:text-gray-100 text-xl font-semibold mb-3 flex items-center gap-2">
                         <span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +52,8 @@ const About = () => {
                     <p className="text-gray-700 dark:text-gray-300">{education.college}</p>
                     <p className="text-gray-700 dark:text-gray-300 mt-1">{education.bachelor}</p>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <div className="dark:border dark:border-gray-300 bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                    <h3 className="dark:text-gray-100 text-xl font-semibold mb-3 flex items-center gap-2">
                         <span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +79,7 @@ const About = () => {
             </div>
 
             <div className="mb-12">
-                <h3 className="flex flex-row gap-3 text-2xl font-semibold mb-4">
+                <h3 className="dark:text-gray-100 flex flex-row gap-3 text-2xl font-semibold mb-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="27"
@@ -94,7 +95,8 @@ const About = () => {
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {skills.map((group, idx) => (
-                        <div key={idx} className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                        <div key={idx}
+                             className="dark:border dark:border-gray-100 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                             <h4 className="font-medium text-gray-800 dark:text-gray-200 mb-2">{group.category}</h4>
                             <div className="flex flex-wrap gap-2">
                                 {group.items.map((item, i) => (
@@ -112,7 +114,7 @@ const About = () => {
             </div>
 
             <div className="mb-12">
-                <h3 className="flex flex-row gap-3 text-2xl font-semibold mb-4">
+                <h3 className="dark:text-gray-100 flex flex-row gap-3 text-2xl font-semibold mb-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="27"
@@ -134,9 +136,9 @@ const About = () => {
                     {achievements.map((ach, idx) => (
                         <div
                             key={idx}
-                            className="border-l-4 border-blue-500 bg-gray-50 dark:bg-gray-800 p-4 rounded-r-lg shadow-sm"
+                            className="border-l-4 border-indigo-500 bg-gray-50 dark:bg-gray-800/80 p-4 rounded-r-lg shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
                         >
-                            <p className="font-medium text-gray-800 dark:text-gray-200">{ach.title}</p>
+                            <p className="font-medium text-gray-800 dark:text-gray-100">{ach.title}</p>
                             <p className="text-sm text-gray-500 dark:text-gray-400">{ach.category}</p>
                         </div>
                     ))}
@@ -144,7 +146,7 @@ const About = () => {
             </div>
 
             <div className="mb-8">
-                <h3 className="flex flex-row gap-3 text-2xl font-semibold mb-4">
+                <h3 className="dark:text-gray-100 flex flex-row gap-3 text-2xl font-semibold mb-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="27"

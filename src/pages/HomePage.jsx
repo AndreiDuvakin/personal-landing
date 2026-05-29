@@ -1,11 +1,11 @@
 import myStack from "../data/myStack.js";
 
 const HomePage = () => (
-    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+    <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors">
         <section className="pt-32 pb-16 px-4 text-center">
             <img
                 alt="Andrei Duvakin"
-                src="/95039238.jpeg"
+                src="/images/95039238.jpeg"
                 className="inline-block size-60 rounded-full ring-2 ring-white outline -outline-offset-1 outline-black/5 object-cover shadow-xl"
             />
             <h1 className="text-5xl font-extrabold mb-4 mt-8">
@@ -30,7 +30,7 @@ const HomePage = () => (
             <div className="flex justify-center gap-4">
                 <a
                     href="https://github.com/AndreiDuvakin"
-                    className="inline-flex items-center gap-2 bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-700 dark:hover:bg-gray-600 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 bg-gray-800 text-white dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-700 active:scale-95 transition-all"
                 >
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                         <path fillRule="evenodd"
@@ -41,7 +41,7 @@ const HomePage = () => (
                 </a>
                 <a
                     href="/contacts"
-                    className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-lg shadow-sm hover:shadow-md hover:border-indigo-500 dark:hover:border-indigo-400 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 dark:tex px-6 py-3 rounded-lg shadow-sm hover:shadow-md hover:border-indigo-500 dark:hover:border-indigo-400 active:scale-95 transition-all"
                 >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -54,7 +54,7 @@ const HomePage = () => (
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a
                     href="/about"
-                    className="group flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md hover:bg-gray-100 dark:hover:bg-gray-750 transition-all"
+                    className="group flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md border border-gray-300 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-200 hover:-translate-y-1"
                 >
                     <svg className="w-8 h-8 text-indigo-500 mb-3 group-hover:scale-110 transition-transform" fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -66,7 +66,7 @@ const HomePage = () => (
                 </a>
                 <a
                     href="/projects"
-                    className="group flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md hover:bg-gray-100 dark:hover:bg-gray-750 transition-all"
+                    className="group flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md border border-gray-300 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-200 hover:-translate-y-1"
                 >
                     <svg className="w-8 h-8 text-indigo-500 mb-3 group-hover:scale-110 transition-transform" fill="none"
                          viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

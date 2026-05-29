@@ -12,9 +12,9 @@ const ProjectCard = ({project}) => {
             />
             <div className="p-5">
                 <div className="flex items-center justify-between">
-                    <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
+                    <h3 className="dark:text-gray-100 font-semibold text-xl mb-2">{project.title}</h3>
                     <span
-                        className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 inset-ring inset-ring-gray-500/10"
+                        className="inline-flex items-center rounded-md bg-gray-50 dark:bg-gray-400 dark:text-gray-100 px-2 py-1 text-xs font-medium text-gray-600 inset-ring inset-ring-gray-500/10"
                     >
                         {project.year}
                       </span>

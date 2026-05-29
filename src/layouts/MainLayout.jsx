@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom";
 import Footer from "../components/Footer.jsx";
 
 const MainLayout = () => (
-    <div>
+    <div className="flex flex-col items-stretch justify-between min-h-screen">
         <NavBar/>
         <div className="content-container">
             <Outlet/>
