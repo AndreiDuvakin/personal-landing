@@ -1,34 +1,34 @@
 import myStack from "../data/myStack.js";
 import {useNavigate} from "react-router-dom";
+import {aboutText, helloText, myName} from "../data/homeData.js";
+
 
 const HomePage = () => {
     const navigate = useNavigate();
 
     return (
         <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors">
-            <section className="pt-32 pb-16 px-4 text-center">
+            <section className="pt-32 pb-16 px-4 text-center flex items-center flex-col">
                 <img
                     alt="Andrei Duvakin"
                     src="/images/FaceFront.png"
                     className="inline-block size-60 rounded-full ring-2 ring-white outline -outline-offset-1 outline-black/5 object-cover shadow-xl"
                 />
                 <h1 className="text-5xl font-extrabold mb-4 mt-8">
-                    Hi, I'm <span className="text-indigo-500">Andrei</span>
+                    {helloText} <span className="text-indigo-500">{myName}</span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-                    Developer of application software solutions. Backend in Python and frontend in React. I have
-                    practical
-                    experience in industrial development. Discovering new directions in development.
+                    {aboutText}
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-2 mb-8">
+                <div className="flex flex-wrap max-w-2xl justify-center gap-2 mb-8 ">
                     {myStack.map((tech) => (
                         <span
                             key={tech}
                             className="px-3 py-1 text-sm rounded-full bg-indigo-50 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700"
                         >
-            {tech}
-          </span>
+                            {tech}
+                        </span>
                     ))}
                 </div>
 

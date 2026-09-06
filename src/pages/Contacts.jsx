@@ -1,3 +1,5 @@
+import {contactsText} from "../data/contactsText.js";
+
 const Contacts = () => {
     const contacts = [
         {
@@ -30,7 +32,7 @@ const Contacts = () => {
         <section id="contacts" className="py-16 px-4 max-w-4xl mx-auto">
             <h2 className="dark:text-gray-100 text-3xl font-bold mb-6 text-center">Contacts</h2>
             <p className="text-center text-gray-600 dark:text-gray-400 mb-10 text-lg">
-                Get in touch – I’m open to opportunities and collaboration
+                {contactsText}
             </p>
 
             <div className="grid gap-6 sm:grid-cols-2">

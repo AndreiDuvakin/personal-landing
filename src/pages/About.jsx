@@ -3,7 +3,7 @@ import {
     experience,
     skills,
     achievements,
-    additionalEducation,
+    additionalEducation, aboutTextFirst, aboutTextSecond,
 } from "../data/aboutData.js";
 import CertificateModal from "../components/CirtificateModal.jsx";
 import {useState} from "react";
@@ -18,17 +18,10 @@ const About = () => {
 
             <div className="mb-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p className="mb-3">
-                    I'm a software developer passionate about building efficient backend services and modern web
-                    interfaces.
-                    My main stack is Python and React, but I also work with Kotlin
-                    and desktop apps by PyQt. Currently completing my associate degree and moving on to a bachelor's
-                    program at
-                    Nosov Magnitogorsk State Technical University.
+                    {aboutTextFirst}
                 </p>
                 <p>
-                    I started programming at Yandex Lyceum and later gained industrial experience at MMK-Informservice,
-                    where I developed business applications, integrated software modules, and worked with databases.
-                    I regularly compete in professional championships and hackathons, achieving top places.
+                    {aboutTextSecond}
                 </p>
             </div>
 
