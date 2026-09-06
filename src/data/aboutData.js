@@ -13,8 +13,8 @@ export const experience = [
 
 export const skills = [
     {category: "Languages", items: ["Python", "Kotlin", "SQL", "JS"]},
-    {category: "Backend", items: ["FastAPI", "Django", "Flask"]},
-    {category: "Frontend / UI", items: ["React", "Jetpack Compose", "PyQt"]},
+    {category: "Backend", items: ["FastAPI", "Django", "Flask", "SQLalchemy", "Multithreading", "Multiprocessing"]},
+    {category: "Frontend / UI", items: ["React", "Jetpack Compose", "PyQt", "Flet"]},
     {category: "Databases & DevOps", items: ["PostgreSQL", "Docker", "Kubernetes (MicroK8s)", "Linux"]},
 ];
 
