@@ -1,5 +1,15 @@
 export const projects = [
     {
+        id: 12,
+        title: 'VDSApp',
+        description: 'Unofficial mobile client (mobile app) for managing Selectel VDS servers. An application based on the Flet library that allows you to work with rented servers directly from your phone. Created for educational purposes.',
+        tags: ['Python', 'Flet', 'Android', 'REST API'],
+        github: 'https://github.com/AndreiDuvakin/VDSAppFlet.git',
+        image: '/images/vdsapp_icon.png',
+        year: 2026,
+        featured: false,
+    },
+    {
         id: 11,
         title: 'Lectio',
         description: 'The project was created to participate in a hackathon to develop an educational information system. Lectio — The system allows you to create courses with lectures and tasks, sign up for them, mark the materials you read, upload solutions with files of any complexity, and give teachers manual grades.',
