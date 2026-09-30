@@ -1,6 +1,7 @@
 import myStack from "../data/myStack.js";
 import {useNavigate} from "react-router-dom";
 import {aboutText, helloText, myName} from "../data/homeData.js";
+import {GitHubCalendar} from "react-github-calendar";
 
 
 const HomePage = () => {
@@ -55,8 +56,7 @@ const HomePage = () => {
                         Contact me
                     </a>
                 </div>
-
-                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                     <a
                         onClick={() => navigate(`/about`)}
                         className="cursor-pointer group flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md border border-gray-300 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-200 hover:-translate-y-1"
@@ -85,6 +85,9 @@ const HomePage = () => {
                         <span
                             className="text-sm text-gray-500 dark:text-gray-400 mt-1">Portfolio with GitHub links</span>
                     </a>
+                </div>
+                <div id="githubBlock" className="mt-12">
+                    <GitHubCalendar username="AndreiDuvakin" />
                 </div>
                 <div className="pt-6 text-center">
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Download my CV:</p>

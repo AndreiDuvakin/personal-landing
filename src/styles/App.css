@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @tailwind utilities;
 
 html {
@@ -8,6 +9,16 @@ html {
 .content-container {
     min-height: 90vh;
     padding: 20px;
+}
+
+#githubBlock {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    #githubBlock {
+        display: block;
+    }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
